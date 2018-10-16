@@ -1,0 +1,14 @@
+{
+  "name": "note",
+  "version": "1.0.0",
+  "description": "Todo List App",
+  "main": "note-model.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Laura Jackson",
+  "license": "MIT"
+}
