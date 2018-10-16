@@ -2,7 +2,7 @@
   "name": "note",
   "version": "1.0.0",
   "description": "Todo List App",
-  "main": "note-model.js",
+  "main": "note.js",
   "scripts": {
     "test": "test"
   },
