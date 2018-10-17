@@ -1,16 +1,11 @@
 (function(exports) {
-  function NoteList() {
-    this.list = [];
+  function NoteViewer(noteList) {
+    this.noteList = noteList;
   }
 
-  NoteList.prototype.storeNote = function(text, body) {
-    var note = new Note(text, body);
-    this.list.push(note);
-  }
-
-  NoteList.prototype.viewList = function() {
+  NoteViewer.prototype.viewList = function() {
   var htmlStr = "<ol>";
-  this.list.map(item => {
+  this.noteList.list.map(item => {
     htmlStr += "<li><h1>";
     htmlStr += item.title;
     htmlStr += "</h1><p>";
@@ -22,5 +17,5 @@
   return htmlStr;
   }
 
-  exports.NoteList = NoteList;
+  exports.NoteViewer = NoteViewer;
 })(this);
