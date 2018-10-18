@@ -6,7 +6,7 @@ describe('NoteList', function() {
   });
   describe('can add a note to the list', function() {
     noteList.storeNote("Title1","Body of message");
-    assert.isTrue(noteList.list[0].title === "Title1");
+    assert.isTrue(noteList.list[0].text === "Title1");
     // assert.isEmpty(noteList.list);
     // assert.isArray(noteList.list);
   });

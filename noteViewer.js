@@ -1,20 +1,25 @@
 (function(exports) {
   function NoteViewer(noteList) {
-    this.noteList = noteList;
+     this.noteList = noteList;
   }
 
   NoteViewer.prototype.viewList = function() {
-  var htmlStr = "<ol>";
-  this.noteList.list.map(item => {
-    htmlStr += "<li><h1>";
-    htmlStr += item.title;
-    htmlStr += "</h1><p>";
-    htmlStr += item.body;
-    htmlStr += "</p></li>"
-  })
-    // console.log(item.title, item.body)})
-  htmlStr += "</ol>"
-  return htmlStr;
+    var list = this.noteList.viewAll();
+    var htmlStr = "<ul>";
+    list.map(item => {
+      let message = this.truncate(item.text);
+      htmlStr += `<li>${message}</li>`;
+    });
+    htmlStr += "</ul>"
+    return htmlStr;
+  }
+
+  NoteViewer.prototype.truncate = function(message) {
+    if (message.length > 20) {
+      return `${message.slice(0,20)}...`
+    } else {
+      return message;
+    }
   }
 
   exports.NoteViewer = NoteViewer;

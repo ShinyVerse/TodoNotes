@@ -1,6 +1,14 @@
-var div = document.getElementById('hello');
-var btn = document.getElementById('btn');
+(function(exports) {
+  function NoteController(noteList = new NoteList(), noteViewer = NoteViewer) {
+    noteList.storeNote("Information");
+    this.noteListViewer = new noteViewer(noteList);
+  }
 
-btn.addEventListener('click', function() {
-  div.innerHTML = "howdy";
-})
+  NoteController.prototype.insertNote = function() {
+    var main = document.getElementById('mainContainer');
+    main.innerHTML = this.noteListViewer.viewList();
+  }
+
+  exports.NoteController = NoteController;
+
+})(this);

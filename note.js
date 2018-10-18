@@ -7,15 +7,14 @@
 //
 // module.exports.CreateNote = CreateNote;
 (function(exports) {
-  function Note(heading, text) {
-    this.title = heading;
-    this.body = text;
+  function Note(info) {
+    this.text = info;
   };
 
-  Note.prototype.getBody = function () {
-    return this.body;
+  Note.prototype.showText = function () {
+    return this.text;
   };
-  
+
   exports.Note = Note;
 
 })(this);

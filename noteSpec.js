@@ -7,12 +7,10 @@
 // };
 
 describe("Note", function() {
-  var note = new Note("myTitle", "myMessage");
+  var note = new Note("myTitle");
   describe("Testing a note can be created with title and message", function() {
-    assert.includesKey(note, "title");
-    assert.includesKey(note, "body");
+    assert.includesKey(note, "text");
     assert.includesValue(note, "myTitle");
-    assert.includesValue(note, "NotARealMessage");
   })
 })
 //
@@ -21,7 +19,7 @@ describe("Note", function() {
 //       callback();
 // }
 
-// 
+//
 // describe("Hopefully will group them all", testNoteCreation);
 //
 // describe("This is a new section too!", testNoteCreation);

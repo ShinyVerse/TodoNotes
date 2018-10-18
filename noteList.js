@@ -3,24 +3,23 @@
     this.list = [];
   }
 
-  NoteList.prototype.storeNote = function(text, body) {
-    var note = new Note(text, body);
+  NoteList.prototype.viewAll = function() {
+    return this.list;
+  }
+
+  NoteList.prototype.storeNote = function(text) {
+    var note = new Note(text);
     this.list.push(note);
   }
 
-  NoteList.prototype.viewList = function() {
-  var htmlStr = "<ol>";
-  this.list.map(item => {
-    htmlStr += "<li><h1>";
-    htmlStr += item.title;
-    htmlStr += "</h1><p>";
-    htmlStr += item.body;
-    htmlStr += "</p></li>"
-  })
-    // console.log(item.title, item.body)})
-  htmlStr += "</ol>"
-  return htmlStr;
-  }
+  // NoteList.prototype.viewList = function() {
+  // var htmlStr = "<ul>";
+  // this.list.map(item => {
+  //   htmlStr += '<li>${item.text}</li>'
+  // })
+  // htmlStr += "</ul>"
+  // return htmlStr;
+  // }
 
   exports.NoteList = NoteList;
 })(this);
