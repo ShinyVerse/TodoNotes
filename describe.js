@@ -1,4 +1,4 @@
 var describe = function(message, callback) {
-      document.write(message +"</span></br>" );
+      console.log(message);
       callback();
 }
